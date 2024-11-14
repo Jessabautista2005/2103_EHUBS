@@ -15,7 +15,7 @@ public class DBConnect {
     private static Connection con;
     private static DBConnect dbcon;
     
-    private static String url = "jdbc:mysql://localhost:3306/patient";
+    private static String url = "jdbc:mysql://localhost:3306/optical";
     private static String user = "root";
     private static String password = "";
         
