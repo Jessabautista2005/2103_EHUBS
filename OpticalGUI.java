@@ -172,6 +172,7 @@ public class OpticalGUI extends javax.swing.JFrame {
         String patientNum = txtNumber.getText();
         String email = txtEmail.getText();
         
+        
         try {
             Statement stmt = con.createStatement();
             stmt.execute("INSERT INTO `patient` (`PatientName`, `ContactNumber`, `Email`) VALUES ('"+patientName+"', '"+patientNum+"', '"+email+"')");
