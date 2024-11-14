@@ -7,7 +7,6 @@ package UI;
 import Control_Connector.DBConnect;
 import java.sql.*;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author ayodr
@@ -171,6 +170,7 @@ public class OpticalGUI extends javax.swing.JFrame {
         String patientName = txtName.getText();
         String patientNum = txtNumber.getText();
         String email = txtEmail.getText();
+        
         
         
         try {
