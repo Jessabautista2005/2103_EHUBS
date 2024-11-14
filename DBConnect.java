@@ -19,6 +19,19 @@ public class DBConnect {
     private static String user = "root";
     private static String password = "";
         
+    public static Connection getCon(){
+        return con;
+    }
+    public static void setCon(Connection con){
+        DBConnect.con = con;
+    }
+    public static DBConnect getDBCon(){
+        return dbcon;
+    }
+    public static void setDBConnect(DBConnect dbcon){
+        DBConnect.dbcon = dbcon;
+    }
+   
     
     public DBConnect(){
         con = null;
