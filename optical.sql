@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2024 at 07:12 AM
+-- Generation Time: Nov 19, 2024 at 08:34 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -77,13 +77,6 @@ CREATE TABLE `patient` (
   `Email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `patient`
---
-
-INSERT INTO `patient` (`PatientID`, `PatientName`, `ContactNumber`, `Email`) VALUES
-(1, 'Andrei ', '09266045498', 'randreiromeo@gmail.com');
-
 -- --------------------------------------------------------
 
 --
@@ -106,7 +99,7 @@ CREATE TABLE `payment` (
 --
 
 CREATE TABLE `prescription` (
-  `PrescriptionID` int(2) NOT NULL,
+  `PresccriptionID` int(2) NOT NULL,
   `DoctorName` varchar(50) NOT NULL,
   `AssistantName` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -142,7 +135,7 @@ ALTER TABLE `patient`
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `PatientID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `PatientID` int(2) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
