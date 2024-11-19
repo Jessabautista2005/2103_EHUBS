@@ -106,7 +106,7 @@ CREATE TABLE `payment` (
 --
 
 CREATE TABLE `prescription` (
-  `PresccriptionID` int(2) NOT NULL,
+  `PrescriptionID` int(2) NOT NULL,
   `DoctorName` varchar(50) NOT NULL,
   `AssistantName` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
