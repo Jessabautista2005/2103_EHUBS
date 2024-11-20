@@ -20,6 +20,11 @@ public class PatientForm extends javax.swing.JFrame {
     private Connection con;
     public PatientForm() {
         initComponents();
+        
+        // Show in the middle of the screen
+        setLocationRelativeTo(null);
+
+        
         DBConnect dbcon = DBConnect.getDBConnect();
         con = dbcon.getConnection();
     }
@@ -165,15 +170,25 @@ public class PatientForm extends javax.swing.JFrame {
         try {
             Statement stmt = con.createStatement();
             stmt.execute("INSERT INTO patient (PatientName, ContactNumber, Email) VALUES ('" + patientName + "', '" + patientNum + "', '" + email + "')");
-            JOptionPane.showMessageDialog(null, "Inserted");
+            JOptionPane.showMessageDialog(null, "Sign-up Successful!", null, JOptionPane.INFORMATION_MESSAGE);
+                      
         } catch (Exception e) {
             
         }
+        
+        MainWindow main = new MainWindow();
+        main.setVisible(true);
+        
+        this.dispose();
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        Welcome welcome = new Welcome();
+        welcome.setVisible(true);
+        
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
