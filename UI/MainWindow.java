@@ -30,6 +30,11 @@ public class MainWindow extends javax.swing.JFrame {
         
         CardLayout cardLayout = (CardLayout) cardPanel.getLayout();
         cardLayout.show(cardPanel, "Default");
+        
+        cardPanel.add(new ViewPrescription(), "ViewPrescription");
+        cardPanel.setVisible(false);
+        
+       
 
 
     }
@@ -167,7 +172,9 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:cardPanel.setVisible(true);
+        CardLayout cardLayout = (CardLayout) cardPanel.getLayout();
+        cardLayout.show(cardPanel, "ViewPrescription");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
