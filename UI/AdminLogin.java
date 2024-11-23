@@ -177,8 +177,8 @@ public class AdminLogin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Login Successful!", "Welcome", JOptionPane.INFORMATION_MESSAGE);
 
             // Navigate to the Admin Dashboard or next screen
-            MainWindow main = new MainWindow(); // Replace with your next JFrame class
-            main.setVisible(true);
+            Admin admin = new Admin(); // Replace with your next JFrame class
+            admin.setVisible(true);
 
             // Close the current login window
             this.dispose();
