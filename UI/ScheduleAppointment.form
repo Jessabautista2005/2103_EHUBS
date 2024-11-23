@@ -21,6 +21,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="108" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -55,10 +56,14 @@
               </Group>
               <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
           </Group>
+=======
+          <Component id="jPanel1" alignment="0" pref="483" max="32767" attributes="0"/>
+>>>>>>> ce4f304b90a4e3fb64701d04cd04fcfd39953e04
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="52" max="-2" attributes="0"/>
@@ -88,6 +93,9 @@
               </Group>
               <EmptySpace pref="66" max="32767" attributes="0"/>
           </Group>
+=======
+          <Component id="jPanel1" alignment="0" pref="391" max="32767" attributes="0"/>
+>>>>>>> ce4f304b90a4e3fb64701d04cd04fcfd39953e04
       </Group>
     </DimensionLayout>
   </Layout>
@@ -146,6 +154,7 @@
           <SerializedValue value="-84,-19,0,5,115,114,0,14,106,97,118,97,46,117,116,105,108,46,68,97,116,101,104,106,-127,1,75,89,116,25,3,0,0,120,112,119,8,-1,-1,-57,124,-30,7,-100,24,120"/>
         </Property>
       </Properties>
+<<<<<<< HEAD
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
@@ -210,5 +219,97 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
+=======
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="86" max="32767" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="334" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" pref="208" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="daycombobox" min="-2" pref="116" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="71" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel2" alignment="3" pref="48" max="32767" attributes="0"/>
+                      <Component id="daycombobox" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Oswald" size="36" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Schedule Appointment"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Oswald" size="12" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Save"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="daycombobox">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Source Sans Pro Semibold" size="18" style="0"/>
+            </Property>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="5">
+                <StringItem index="0" value="Monday"/>
+                <StringItem index="1" value="Tuesday"/>
+                <StringItem index="2" value="Wednesday"/>
+                <StringItem index="3" value="Thursday"/>
+                <StringItem index="4" value="Friday"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="daycomboboxActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Source Sans Pro Semibold" size="24" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Choose schedule:"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+>>>>>>> ce4f304b90a4e3fb64701d04cd04fcfd39953e04
   </SubComponents>
 </Form>
