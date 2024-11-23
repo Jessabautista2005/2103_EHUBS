@@ -1,5 +1,8 @@
 
 package optical;
+import java.sql.*;
+import Control_Connector.DBConnect;
+
 
 public class Patient {
     
@@ -37,8 +40,9 @@ public class Patient {
     // Methods
     void bookAppointmet(){
         
+        
     }
-    void cancelAppointment(){
+    void deletelAppointment(){
         
     }
     void buyProduct(){

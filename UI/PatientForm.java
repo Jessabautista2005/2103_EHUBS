@@ -163,23 +163,63 @@ public class PatientForm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String patientName = txtName.getText();
-        String patientNum = txtContact.getText();
-        String email = txtEmail.getText();
-        
-        try {
-            Statement stmt = con.createStatement();
-            stmt.execute("INSERT INTO patient (PatientName, ContactNumber, Email) VALUES ('" + patientName + "', '" + patientNum + "', '" + email + "')");
-            JOptionPane.showMessageDialog(null, "Sign-up Successful!", null, JOptionPane.INFORMATION_MESSAGE);
-                      
-        } catch (Exception e) {
-            
+     String patientName = txtName.getText();
+    String patientNum = txtContact.getText();
+    String email = txtEmail.getText();
+
+    // Input validation
+    if (patientName.isEmpty() || patientNum.isEmpty() || email.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Please fill in all fields!", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    // Validate email format (simple regex check)
+    if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+        JOptionPane.showMessageDialog(null, "Please enter a valid email address!", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    // Validate contact number (ensure it's numeric and of a certain length)
+    if (!patientNum.matches("\\d{10,15}")) {
+        JOptionPane.showMessageDialog(null, "Please enter a valid contact number (10-15 digits)!", "Input Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try {
+        // Check if the record already exists
+        String query = "SELECT * FROM patient WHERE ContactNumber = ? OR Email = ?";
+        PreparedStatement checkStmt = con.prepareStatement(query);
+        checkStmt.setString(1, patientNum);
+        checkStmt.setString(2, email);
+        ResultSet rs = checkStmt.executeQuery();
+
+        if (rs.next()) {
+            // If record exists, notify the user
+            JOptionPane.showMessageDialog(null, "A patient with this contact number or email already exists!", "Duplicate Entry", JOptionPane.WARNING_MESSAGE);
+        } else {
+            // Insert new data
+            String insertQuery = "INSERT INTO patient (PatientName, ContactNumber, Email) VALUES (?, ?, ?)";
+            PreparedStatement insertStmt = con.prepareStatement(insertQuery);
+            insertStmt.setString(1, patientName);
+            insertStmt.setString(2, patientNum);
+            insertStmt.setString(3, email);
+            int rowsInserted = insertStmt.executeUpdate();
+
+            if (rowsInserted > 0) {
+                JOptionPane.showMessageDialog(null, "Sign-up Successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            }
+
+            // Open the main window
+            MainWindow main = new MainWindow();
+            main.setVisible(true);
+
+            // Close the current form
+            this.dispose();
         }
-        
-        MainWindow main = new MainWindow();
-        main.setVisible(true);
-        
-        this.dispose();
+    } catch (Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null, "An error occurred while signing up. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
