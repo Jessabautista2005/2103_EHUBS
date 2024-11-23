@@ -8,16 +8,28 @@ package UI;
  *
  * @author ayodr
  */
+import Control_Connector.DBConnect;
 import java.awt.CardLayout;
 import UI.MainWindow;
+import java.sql.Connection;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import java.sql.*;
 
 public class ViewAppointment extends javax.swing.JPanel {
 
     /**
      * Creates new form ViewAppointment
      */
+    private Connection con;
     public ViewAppointment() {
-        initComponents();
+        initComponents(); 
+        
+        
+    setLocationRelativeTo(null);
+        
+        DBConnect dbcon = DBConnect.getDBConnect();
+        con = dbcon.getConnection();
     }
 
     /**
@@ -37,9 +49,14 @@ public class ViewAppointment extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        save = new javax.swing.JButton();
+        appointmentId = new javax.swing.JTextField();
+        txtname = new javax.swing.JTextField();
+        txtDoctor = new javax.swing.JTextField();
+        daycombobox = new javax.swing.JComboBox<>();
+        timecombobox = new javax.swing.JComboBox<>();
 
-        setBackground(new java.awt.Color(204, 204, 204));
+        setBackground(java.awt.SystemColor.activeCaption);
         setPreferredSize(new java.awt.Dimension(474, 339));
 
         jLabel1.setFont(new java.awt.Font("Oswald", 1, 36)); // NOI18N
@@ -75,10 +92,24 @@ public class ViewAppointment extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setText("Update");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        save.setText("Save");
+        save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                saveActionPerformed(evt);
+            }
+        });
+
+        daycombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Monday", "Tueday", "Wednesday", "Thursday", "Friday" }));
+        daycombobox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                daycomboboxActionPerformed(evt);
+            }
+        });
+
+        timecombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM" }));
+        timecombobox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                timecomboboxActionPerformed(evt);
             }
         });
 
@@ -90,51 +121,66 @@ public class ViewAppointment extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(72, 72, 72)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jLabel5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jLabel6))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))))
-                .addContainerGap(57, Short.MAX_VALUE))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(114, 114, 114)
+                                .addComponent(jButton1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(72, 72, 72)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(daycombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtDoctor, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jButton2)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(save))
+                                .addComponent(appointmentId)
+                                .addComponent(txtname))
+                            .addComponent(timecombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jLabel2)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(appointmentId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addGap(9, 9, 9)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
-                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(5, 5, 5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(daycombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(3, 3, 3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(timecombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addContainerGap(55, Short.MAX_VALUE))
+                    .addComponent(save))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -147,20 +193,149 @@ public class ViewAppointment extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    
+    String appointmentID = appointmentId.getText();
+    String patientName = txtname.getText();
+    String doctorName = txtDoctor.getText();
+    String date = daycombobox.getSelectedItem().toString();
+    String time = timecombobox.getSelectedItem().toString();
 
+    // Check if any field is empty
+    try {
+            Statement stmt = con.createStatement();
+            stmt.execute("INSERT INTO appointment (AppointmentID, PatientName, ContactNumber, Email) VALUES ('" + appointmentId + "', '" + patientName + "', '" + doctorName + "', '" + date + "', '" + time + "')");
+            JOptionPane.showMessageDialog(null, "Sign-up Successful!", null, JOptionPane.INFORMATION_MESSAGE);
+                      
+        } catch (Exception e) {
+            
+        }
+        
+        MainWindow main = new MainWindow();
+        main.setVisible(true);
+        
+        this.dispose();
 
+        
+    }//GEN-LAST:event_saveActionPerformed
+
+    private void daycomboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_daycomboboxActionPerformed
+        // TODO add your handling code here:
+        String selectedDay = (String) daycombobox.getSelectedItem();
+    
+    // Check if the selected day is between Monday to Friday
+    if (selectedDay != null) {
+        switch (selectedDay.toLowerCase()) {
+            case "monday":
+            case "tuesday":
+            case "wednesday":
+            case "thursday":
+            case "friday":
+                // Logic for weekdays (Monday to Friday)
+                System.out.println(selectedDay + " is a weekday.");
+                break;
+
+            default:
+                // Logic for weekends or invalid input
+                System.out.println(selectedDay + " is not a weekday.");
+                break;
+        }
+    } else {
+        System.out.println("No day selected.");
+    }
+
+    }//GEN-LAST:event_daycomboboxActionPerformed
+
+    private void timecomboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timecomboboxActionPerformed
+        // TODO add your handling code here:
+        // Get the selected time from the combo box
+    String selectedTime = (String) timecombobox.getSelectedItem();
+    
+    // Check if the selected time falls in the 8-11 AM or 1-4 PM range
+    if (selectedTime != null) {
+        switch (selectedTime) {
+            case "8:00 AM":
+            case "9:00 AM":
+            case "10:00 AM":
+            case "11:00 AM":
+                // Logic for 8-11 AM
+                System.out.println(selectedTime + " falls in the 8-11 AM range.");
+                break;
+
+            case "1:00 PM":
+            case "2:00 PM":
+            case "3:00 PM":
+            case "4:00 PM":
+                // Logic for 1-4 PM
+                System.out.println(selectedTime + " falls in the 1-4 PM range.");
+                break;
+
+            default:
+                // Logic for times outside the specified ranges
+                System.out.println(selectedTime + " is not within the specified time ranges.");
+                break;
+        }
+    } else {
+        System.out.println("No time selected.");
+    }
+    
+    }//GEN-LAST:event_timecomboboxActionPerformed
+
+    public static void main(String args[]) {
+            /* Set the Nimbus look and feel */
+            //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+            /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+             * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+             */
+            try {
+                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                    if ("Nimbus".equals(info.getName())) {
+                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                        break;
+                    }
+                }
+            } catch (ClassNotFoundException ex) {
+                java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (InstantiationException ex) {
+                java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (IllegalAccessException ex) {
+                java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+                java.util.logging.Logger.getLogger(Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            }
+            //</editor-fold>
+
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(new Runnable(){
+                public void run(){
+                    new ViewAppointment().setVisible(true);
+
+                }
+               });
+        }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField appointmentId;
+    private javax.swing.JComboBox<String> daycombobox;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JButton save;
+    private javax.swing.JComboBox<String> timecombobox;
+    private javax.swing.JTextField txtDoctor;
+    private javax.swing.JTextField txtname;
     // End of variables declaration//GEN-END:variables
+
+    private void dispose() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void setLocationRelativeTo(Object object) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
