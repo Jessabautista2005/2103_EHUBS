@@ -50,6 +50,8 @@ public class paymen extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(616, 456));
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
         jLabel1.setFont(new java.awt.Font("Oswald", 1, 36)); // NOI18N
         jLabel1.setText("PAYMENT");
 
