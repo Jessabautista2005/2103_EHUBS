@@ -53,6 +53,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -60,6 +61,25 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txtPatientID" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
                               <Component id="txtContact" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
+=======
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtPatientID" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <Component id="txtContact" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+>>>>>>> 07e077dcb0aef7da1ea37a08ba1a3b26e1e6e3ab
                           </Group>
                       </Group>
                   </Group>
@@ -135,7 +155,11 @@
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+<<<<<<< HEAD
               <Font name="Source Sans Pro Semibold" size="14" style="1"/>
+=======
+              <Font name="Source Sans Pro Semibold" size="12" style="0"/>
+>>>>>>> 07e077dcb0aef7da1ea37a08ba1a3b26e1e6e3ab
             </Property>
             <Property name="text" type="java.lang.String" value="Log-in"/>
           </Properties>
@@ -146,7 +170,11 @@
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+<<<<<<< HEAD
               <Font name="Source Sans Pro Semibold" size="14" style="1"/>
+=======
+              <Font name="Source Sans Pro Semibold" size="12" style="0"/>
+>>>>>>> 07e077dcb0aef7da1ea37a08ba1a3b26e1e6e3ab
             </Property>
             <Property name="text" type="java.lang.String" value="Cancel"/>
           </Properties>

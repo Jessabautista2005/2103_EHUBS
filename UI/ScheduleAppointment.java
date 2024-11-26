@@ -13,11 +13,15 @@ import java.sql.*;
 import com.toedter.calendar.JDateChooser;
 import java.util.Calendar;
 import java.util.Date;
+<<<<<<< HEAD
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import optical.Patient;
 import optical.Session;
 import UI.MainWindow;
+=======
+import javax.swing.JOptionPane;
+>>>>>>> 07e077dcb0aef7da1ea37a08ba1a3b26e1e6e3ab
 
 
 public class ScheduleAppointment extends javax.swing.JPanel {
@@ -29,6 +33,7 @@ public class ScheduleAppointment extends javax.swing.JPanel {
     private Connection con;
     public ScheduleAppointment(MainWindow mainWindow) {
         initComponents();
+<<<<<<< HEAD
         this.mainWindow = mainWindow;
 
         con = DBConnect.getConnection();
@@ -37,6 +42,8 @@ public class ScheduleAppointment extends javax.swing.JPanel {
             mainWindow.showDefaultPanel();  // Go back to the default panel
         });
 
+=======
+>>>>>>> 07e077dcb0aef7da1ea37a08ba1a3b26e1e6e3ab
          // Set the minimum selectable date to today's date
         jDateChooser1.setMinSelectableDate(new Date());
 
@@ -81,6 +88,7 @@ public class ScheduleAppointment extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+<<<<<<< HEAD
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
@@ -90,16 +98,29 @@ public class ScheduleAppointment extends javax.swing.JPanel {
         lblPatientName = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         lblDoctorID = new javax.swing.JLabel();
+=======
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+>>>>>>> 07e077dcb0aef7da1ea37a08ba1a3b26e1e6e3ab
 
         setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Oswald", 1, 36)); // NOI18N
         jLabel1.setText("Schedule An Appointment");
 
+<<<<<<< HEAD
         jLabel2.setFont(new java.awt.Font("Source Sans Pro Black", 0, 18)); // NOI18N
         jLabel2.setText("Doctor:");
 
         jLabel3.setFont(new java.awt.Font("Source Sans Pro Black", 0, 18)); // NOI18N
+=======
+        jLabel2.setFont(new java.awt.Font("Source Sans Pro Semibold", 0, 18)); // NOI18N
+        jLabel2.setText("Doctor:");
+
+        jLabel3.setFont(new java.awt.Font("Source Sans Pro Semibold", 0, 18)); // NOI18N
+>>>>>>> 07e077dcb0aef7da1ea37a08ba1a3b26e1e6e3ab
         jLabel3.setText("Patient Name:");
 
         jLabel4.setFont(new java.awt.Font("Source Sans Pro Black", 0, 18)); // NOI18N
@@ -111,12 +132,18 @@ public class ScheduleAppointment extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Source Sans Pro Black", 0, 18)); // NOI18N
         jLabel6.setText("Time:");
 
+<<<<<<< HEAD
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
             }
         });
+=======
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM" }));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Consultation", "Vision Screening", "Eyewear Fitting", "Follow-up Appointment", "Special Tests", "Surgery Pre/Post Consultation" }));
+>>>>>>> 07e077dcb0aef7da1ea37a08ba1a3b26e1e6e3ab
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Consultation", "Vision Screening", "Eyewear Fitting", "Follow-up Appointment", "Special Tests", "Surgery Pre/Post Consultation" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -127,11 +154,6 @@ public class ScheduleAppointment extends javax.swing.JPanel {
 
         jButton1.setFont(new java.awt.Font("Source Sans Pro Semibold", 1, 14)); // NOI18N
         jButton1.setText("OK");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         backButton.setFont(new java.awt.Font("Source Sans Pro Semibold", 1, 14)); // NOI18N
         backButton.setText("CANCEL");
@@ -141,6 +163,7 @@ public class ScheduleAppointment extends javax.swing.JPanel {
             }
         });
 
+<<<<<<< HEAD
         jLabel7.setFont(new java.awt.Font("Source Sans Pro Black", 0, 18)); // NOI18N
         jLabel7.setText("Dr. Juan Dela Cruz");
 
@@ -152,6 +175,8 @@ public class ScheduleAppointment extends javax.swing.JPanel {
         lblDoctorID.setFont(new java.awt.Font("Source Sans Pro Black", 0, 18)); // NOI18N
         lblDoctorID.setText("1");
 
+=======
+>>>>>>> 07e077dcb0aef7da1ea37a08ba1a3b26e1e6e3ab
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -164,6 +189,7 @@ public class ScheduleAppointment extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(85, 85, 85)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
@@ -190,6 +216,28 @@ public class ScheduleAppointment extends javax.swing.JPanel {
                                     .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(125, Short.MAX_VALUE))
+=======
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(94, 94, 94))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jButton1)
+                                        .addGap(32, 32, 32)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(19, 19, 19)
+                                        .addComponent(jButton2)))))))
+                .addGap(125, 125, 125))
+>>>>>>> 07e077dcb0aef7da1ea37a08ba1a3b26e1e6e3ab
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,6 +245,7 @@ public class ScheduleAppointment extends javax.swing.JPanel {
                 .addGap(27, 27, 27)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+<<<<<<< HEAD
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -334,13 +383,43 @@ try (Connection conn = DBConnect.getConnection()) {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+=======
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(2, 2, 2)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap(57, Short.MAX_VALUE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        MainWindow mw = new MainWindow();
+        mw.setVisible(true);
+        
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+>>>>>>> 07e077dcb0aef7da1ea37a08ba1a3b26e1e6e3ab
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -352,4 +431,8 @@ try (Connection conn = DBConnect.getConnection()) {
     private javax.swing.JLabel lblDoctorID;
     private javax.swing.JLabel lblPatientName;
     // End of variables declaration//GEN-END:variables
+
+    private void dispose() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
