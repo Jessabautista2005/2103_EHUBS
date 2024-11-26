@@ -1,56 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Control_Connector;
 
-/**
- *
- * @author ayodr
- */
-import java.sql.*;
-import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DBConnect {
-    private static Connection con;
-    private static DBConnect dbcon;
-    
-    private static String url = "jdbc:mysql://localhost:3306/optical";
-    private static String user = "root";
-    private static String password = "";
-        
-    public static Connection getCon(){
+    private static final String URL = "jdbc:mysql://localhost:3306/optical"; // Update as needed
+    private static final String USER = "root"; // Database username
+    private static final String PASSWORD = ""; // Database password
+
+    // Private constructor to prevent instantiation
+    private DBConnect() {}
+
+    /**
+     * Get a new database connection.
+     * 
+     * @return Connection object, or null if a connection cannot be established.
+     */
+    public static Connection getConnection() {
+        Connection con = null;
+        try {
+            con = DriverManager.getConnection(URL, USER, PASSWORD);
+        } catch (SQLException e) {
+            e.printStackTrace(); // Log error details for debugging
+        }
         return con;
     }
-    public static void setCon(Connection con){
-        DBConnect.con = con;
-    }
-    public static DBConnect getDBCon(){
-        return dbcon;
-    }
-    public static void setDBConnect(DBConnect dbcon){
-        DBConnect.dbcon = dbcon;
-    }
-   
-    
-    public DBConnect(){
-        con = null;
-        try {
-            con = DriverManager.getConnection(url, user, password);
-            
-        } catch (Exception ex) {
-        }
- 
-    }
-     public static DBConnect getDBConnect(){
-         if(dbcon == null){
-             dbcon = new DBConnect();
-         }
-            return dbcon;
-        }
-     public static Connection getConnection(){
-            return con;
-     }
-    
-        
 }

@@ -11,6 +11,9 @@ package UI;
 import java.sql.*;
 import Control_Connector.DBConnect;
 import javax.swing.JOptionPane;
+import optical.Session;
+import optical.Patient;
+ 
 
 public class PatientForm extends javax.swing.JFrame {
 
@@ -24,9 +27,8 @@ public class PatientForm extends javax.swing.JFrame {
         // Show in the middle of the screen
         setLocationRelativeTo(null);
 
-        
-        DBConnect dbcon = DBConnect.getDBConnect();
-        con = dbcon.getConnection();
+
+        con = DBConnect.getConnection();
     }
 
     /**
@@ -80,6 +82,7 @@ public class PatientForm extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Source Sans Pro Semibold", 0, 18)); // NOI18N
         jLabel4.setText("E-mail:");
 
+        jButton1.setFont(new java.awt.Font("Source Sans Pro Semibold", 1, 14)); // NOI18N
         jButton1.setText("Sign-up");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +90,7 @@ public class PatientForm extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Source Sans Pro Semibold", 1, 14)); // NOI18N
         jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,7 +148,7 @@ public class PatientForm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -163,7 +167,7 @@ public class PatientForm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-     String patientName = txtName.getText();
+    String patientName = txtName.getText();
     String patientNum = txtContact.getText();
     String email = txtEmail.getText();
 
@@ -199,13 +203,20 @@ public class PatientForm extends javax.swing.JFrame {
         } else {
             // Insert new data
             String insertQuery = "INSERT INTO patient (PatientName, ContactNumber, Email) VALUES (?, ?, ?)";
-            PreparedStatement insertStmt = con.prepareStatement(insertQuery);
+            PreparedStatement insertStmt = con.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);  // Use Statement.RETURN_GENERATED_KEYS to retrieve the auto-generated PatientID
             insertStmt.setString(1, patientName);
             insertStmt.setString(2, patientNum);
             insertStmt.setString(3, email);
             int rowsInserted = insertStmt.executeUpdate();
 
             if (rowsInserted > 0) {
+                // Retrieve the generated PatientID (auto-increment value)
+                ResultSet generatedKeys = insertStmt.getGeneratedKeys();
+                if (generatedKeys.next()) {
+                    int patientID = generatedKeys.getInt(1); // Get the PatientID
+                    // Set the PatientID to the session
+                    Session.setLoggedInPatient(new Patient(patientID, patientName, patientNum, email));
+                }
                 JOptionPane.showMessageDialog(null, "Sign-up Successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
             }
 
@@ -219,8 +230,7 @@ public class PatientForm extends javax.swing.JFrame {
     } catch (Exception e) {
         e.printStackTrace();
         JOptionPane.showMessageDialog(null, "An error occurred while signing up. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
-        
+    }        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

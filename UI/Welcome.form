@@ -62,21 +62,34 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel6" min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="jLabel7" min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="jLabel8" min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="jLabel9" min="-2" pref="32" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel3" max="32767" attributes="0"/>
-                                  <Component id="jLabel4" min="-2" pref="145" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" pref="174" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel6" min="-2" pref="32" max="-2" attributes="0"/>
+                                      <Component id="jLabel7" min="-2" pref="32" max="-2" attributes="0"/>
+                                      <Component id="jLabel8" min="-2" pref="32" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel3" pref="180" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel4" min="-2" pref="145" max="-2" attributes="0"/>
+                                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
-                              <Component id="jLabel2" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel9" min="-2" pref="32" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jLabel5" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                           <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                       </Group>
@@ -112,13 +125,13 @@
                               <Component id="jLabel7" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
                               <Component id="jLabel3" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel8" min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="jLabel4" min="-2" pref="37" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel4" min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="jLabel8" min="-2" pref="32" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel9" min="-2" pref="32" max="-2" attributes="0"/>
                               <Component id="jLabel5" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
@@ -176,6 +189,9 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Source Sans Pro Semibold" size="14" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Admin"/>
               </Properties>
               <Events>
@@ -184,6 +200,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton3">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Source Sans Pro Semibold" size="14" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Log-in"/>
               </Properties>
               <Events>
@@ -192,6 +211,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Source Sans Pro Semibold" size="14" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Sign-up"/>
               </Properties>
               <Events>
@@ -215,7 +237,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Source Sans Pro Semibold" size="18" style="1"/>
+              <Font name="Source Sans Pro Black" size="18" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Dr. Juan dela Cruz"/>
           </Properties>
@@ -223,7 +245,7 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Source Sans Pro Semibold" size="14" style="0"/>
+              <Font name="Source Sans Pro Black" size="18" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Nasugbu, Batangas"/>
           </Properties>
@@ -231,7 +253,7 @@
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Source Sans Pro Semibold" size="14" style="0"/>
+              <Font name="Source Sans Pro Black" size="18" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="09123456789"/>
           </Properties>
@@ -239,7 +261,7 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Source Sans Pro Semibold" size="14" style="0"/>
+              <Font name="Source Sans Pro Black" size="18" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="opticlear@gmail.com"/>
           </Properties>

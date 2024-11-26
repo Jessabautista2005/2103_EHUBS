@@ -19,8 +19,8 @@ public class OpticalGUI extends javax.swing.JFrame {
     private Connection con;
     public OpticalGUI() {
         initComponents();
-        DBConnect dbcon = DBConnect.getDBConnect();
-        con = dbcon.getConnection();
+
+        con = DBConnect.getConnection();
         
     }
 

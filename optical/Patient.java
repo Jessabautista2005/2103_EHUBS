@@ -6,46 +6,54 @@ import Control_Connector.DBConnect;
 
 public class Patient {
     
-    private String PatientName, Email;
-    private int PatientID, ContactNumber;
+    private String PatientName, Email, ContactNumber;
+    private int PatientID;
     
-    // Setters
-    void setName(String PatientName){
+        // Add a constructor for patientID and contactNumber
+    public Patient(int PatientID, String PatientName, String ContactNumber, String Email) {
+        this.PatientID = PatientID;
         this.PatientName = PatientName;
-    } 
-    void setEmail(String Email){
+        this.ContactNumber = ContactNumber;
         this.Email = Email;
     }
-    void setID(int PatientID){
+    // Setters
+    public void setName(String PatientName){
+        this.PatientName = PatientName;
+    } 
+    public void setEmail(String Email){
+        this.Email = Email;
+    }
+    public void setID(int PatientID){
         this.PatientID = PatientID;
     }
-    void setNumber(int ContactNumber){
+    public void setContactNumber(String ContactNumber){
         this.ContactNumber = ContactNumber;        
     }
     
     // Getters   
-    String getName(){
+    public String getName(){
         return PatientName;
     }
-    String getEmail(){
+    public String getEmail(){
         return Email;
     }
-    int setID(){
+    public int getID(){
         return PatientID;
     }
-    int setNumber(){
+    public String getNumber(){
         return ContactNumber;
     }
     
     // Methods
-    void bookAppointmet(){
+    public void bookAppointmet(){
         
         
     }
-    void deletelAppointment(){
+    public void deletelAppointment(){
         
     }
-    void buyProduct(){
+    
+    public void buyProduct(){
         
     }
     
