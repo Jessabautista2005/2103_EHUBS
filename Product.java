@@ -142,6 +142,7 @@ public class Product extends javax.swing.JPanel {
         jLabel10.setFont(new java.awt.Font("Oswald", 1, 18)); // NOI18N
         jLabel10.setText("EYEDROP");
 
+        jTable1.setBackground(new java.awt.Color(204, 204, 204));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
